@@ -1,7 +1,7 @@
 {
-  "name": "@curveball/new-package",
-  "version": "0.0.1",
-  "description": "Description goes here",
+  "name": "@curveball/problem",
+  "version": "0.1.0",
+  "description": "A middleware for converting errors into application/problem+json",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/curveballjs/new-package.git"
+    "url": "git+https://github.com/curveballjs/problem.git"
   },
   "files": [
     "package.json",
@@ -26,14 +26,18 @@
     "typescript",
     "push",
     "http2",
-    "curveball"
+    "curveball",
+    "problem",
+    "error",
+    "exception",
+    "rfc7807"
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/curveballjs/new-package/issues"
+    "url": "https://github.com/curveballjs/problem/issues"
   },
-  "homepage": "https://github.com/curveballjs/new-package#readme",
+  "homepage": "https://github.com/curveballjs/problem#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
