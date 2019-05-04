@@ -30,6 +30,19 @@ Typically you will want the problem middleware to be one of the first
 middlewares you add to the server. Only exceptions from midddlewares that come
 after the problem middleware can be caught.
 
+
+### Throwing errors
+
+You can throw the following kinds of errors.
+
+* Standard errors. These errors will be anonimized and logged to the console.
+  a http 500 error gets emitted. (unless debug mode is on).
+* Errors with a `httpStatus` property. Any error that's thrown that has a
+  `httpStatus` property will automatically use that http status. The error
+  message will be used as a title.
+* An error from the [http-errors][3] package.
+
+
 ### Debug mode
 
 By default the middleware will emit a detailed error for any exception that
