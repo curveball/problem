@@ -1,6 +1,8 @@
 Curveball Problem Middleware
 ===========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/curveballjs/problem.svg)](https://greenkeeper.io/)
+
 This package is a middleware for the [Curveball][2] framework that catches any
 exception and turns them into `application/problem+json` responses, as defined
 in [RFC7807][1].
