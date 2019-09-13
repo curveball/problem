@@ -1,6 +1,6 @@
 {
   "name": "@curveball/problem",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A middleware for converting errors into application/problem+json",
   "main": "dist/index.js",
   "scripts": {
@@ -39,17 +39,17 @@
   },
   "homepage": "https://github.com/curveballjs/problem#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^12.0.0",
-    "@types/sinon": "^7.0.11",
+    "@types/chai": "^4.2.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.5",
+    "@types/sinon": "^7.0.13",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4",
-    "nyc": "^14.1.0",
-    "sinon": "^7.3.2",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   },
   "types": "dist/",
   "nyc": {
@@ -58,6 +58,6 @@
     ]
   },
   "dependencies": {
-    "@curveball/core": "^0.8.6"
+    "@curveball/core": "^0.9.0"
   }
 }
