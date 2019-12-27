@@ -39,17 +39,18 @@
   },
   "homepage": "https://github.com/curveballjs/problem#readme",
   "devDependencies": {
-    "@types/chai": "^4.2.2",
+    "@curveball/core": "^0.9",
+    "@types/chai": "^4.2.7",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.5",
-    "@types/sinon": "^7.0.13",
+    "@types/node": "^10.17.13",
+    "@types/sinon": "^7.5.1",
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
-    "sinon": "^7.4.2",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
+    "mocha": "^6.2.2",
+    "nyc": "^15.0.0",
+    "sinon": "^8.0.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
   },
   "types": "dist/",
   "nyc": {
@@ -57,7 +58,7 @@
       ".ts"
     ]
   },
-  "dependencies": {
-    "@curveball/core": "^0.9.0"
+  "peerDependencies": {
+    "@curveball/core": "^0.9.4"
   }
 }
