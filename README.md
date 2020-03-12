@@ -1,7 +1,7 @@
 Curveball Problem Middleware
 ===========================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/curveballjs/problem.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/curveball/problem.svg)](https://greenkeeper.io/)
 
 This package is a middleware for the [Curveball][2] framework that catches any
 exception and turns them into `application/problem+json` responses, as defined
@@ -70,6 +70,6 @@ The second way is by setting the environemnt variable `NODE_ENV` to the string
 If the `debug` property is set, that value always takes precedent.
 
 [1]: https://tools.ietf.org/html/rfc7807
-[2]: https://github.com/curveballjs/
-[3]: https://github.com/curveballjs/http-errors
+[2]: https://github.com/curveball/
+[3]: https://github.com/curveball/http-errors
 

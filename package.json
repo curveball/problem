@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/curveballjs/problem.git"
+    "url": "git+https://github.com/curveball/problem.git"
   },
   "files": [
     "package.json",
@@ -35,9 +35,9 @@
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/curveballjs/problem/issues"
+    "url": "https://github.com/curveball/problem/issues"
   },
-  "homepage": "https://github.com/curveballjs/problem#readme",
+  "homepage": "https://github.com/curveball/problem#readme",
   "devDependencies": {
     "@curveball/core": "^0.10.0",
     "@types/chai": "^4.2.7",
@@ -60,5 +60,14 @@
   },
   "peerDependencies": {
     "@curveball/core": ">=0.9 <1"
+  },
+  "mocha": {
+    "require": "ts-node/register",
+    "recursive": true,
+    "extension": [
+      "ts",
+      "js",
+      "tsx"
+    ]
   }
 }
