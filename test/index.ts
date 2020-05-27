@@ -1,15 +1,19 @@
 import { Application, Middleware } from '@curveball/core';
 import problemMw from '../src/index';
 import { expect } from 'chai';
+import { stub } from 'sinon';
 import { NotFound, ServiceUnavailable, MethodNotAllowed, Unauthorized } from '@curveball/http-errors';
 
 class BlandError extends Error {
   httpStatus = 420
 };
 
-const tester = (fun: Middleware, debug?: boolean) => {
+const tester = (fun: Middleware, debug?: boolean, quiet?: boolean) => {
 
-  const settings = debug !== undefined ? { debug } : undefined;
+  const settings = {
+    debug: debug !== undefined ? debug : undefined,
+    quiet: quiet !== undefined ? quiet : undefined,
+  }
 
   const app = new Application();
   app.use( problemMw(settings) );
@@ -129,6 +133,22 @@ describe('Problem middleware', () => {
     delete process.env.NODE_ENV;
 
   });
+
+  it('should not log to the console if quiet mode is set', async() => {
+    const consoleStub = stub(console, 'error');
+
+    await tester( () => {
+      throw new Error('Hello');
+    }, false, true);
+
+    expect(consoleStub.notCalled).to.be.true
+
+    await tester( () => {
+      throw new Error('Hello');
+    }, false, false);
+
+    expect(consoleStub.calledOnce).to.be.true
+  })
 
   it('should also correctly pick up "httpError" properties', async () => {
 

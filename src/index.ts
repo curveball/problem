@@ -2,7 +2,8 @@ import { Middleware } from '@curveball/core';
 import { HttpProblem, isClientError, isHttpError } from '@curveball/http-errors';
 
 type ProblemMwSettings = {
-  debug: boolean,
+  debug: boolean | undefined,
+  quiet: boolean | undefined,
 };
 
 export default function(settings?: ProblemMwSettings): Middleware {
@@ -69,14 +70,15 @@ export default function(settings?: ProblemMwSettings): Middleware {
         ctx.response.body.detail = detail;
       }
 
-      if (clientError) {
-        // tslint:disable-next-line no-console
-        console.warn(e);
-      } else {
-        // tslint:disable-next-line no-console
-        console.error(e);
+      if (settings && !settings.quiet) {
+        if (clientError) {
+          // tslint:disable-next-line no-console
+          console.warn(e);
+        } else {
+          // tslint:disable-next-line no-console
+          console.error(e);
+        }
       }
-
     }
 
   };
