@@ -134,20 +134,30 @@ describe('Problem middleware', () => {
 
   });
 
-  it('should not log to the console if quiet mode is set', async() => {
+  it('should not log client warnings to the console if quiet mode is set', async() => {
+    const consoleStub = stub(console, 'warn');
+
+    await tester( () => {
+      throw new Unauthorized('Zzz', ['Bearer', 'Digest']);
+    }, false, true);
+
+    expect(consoleStub.notCalled).to.be.true;
+
+    await tester( () => {
+      throw new Unauthorized('Zzz', ['Bearer', 'Digest']);
+    }, false, false);
+
+    expect(consoleStub.calledOnce).to.be.true;
+  })
+
+  it ('should log internal errors to the console if quiet mode is set', async() => {
     const consoleStub = stub(console, 'error');
 
     await tester( () => {
-      throw new Error('Hello');
+      throw new Error();
     }, false, true);
 
-    expect(consoleStub.notCalled).to.be.true
-
-    await tester( () => {
-      throw new Error('Hello');
-    }, false, false);
-
-    expect(consoleStub.calledOnce).to.be.true
+    expect(consoleStub.calledOnce).to.be.true;
   })
 
   it('should also correctly pick up "httpError" properties', async () => {

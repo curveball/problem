@@ -70,8 +70,8 @@ export default function(settings?: ProblemMwSettings): Middleware {
         ctx.response.body.detail = detail;
       }
 
-      if (settings && !settings.quiet) {
-        if (clientError) {
+      if (settings) {
+        if (clientError && settings.quiet === false) {
           // tslint:disable-next-line no-console
           console.warn(e);
         } else {
