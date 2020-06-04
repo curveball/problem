@@ -15,6 +15,11 @@ export default function(settings?: ProblemMwSettings): Middleware {
     debugMode = true;
   }
 
+  let quiet = false;
+  if (settings && settings.quiet !== undefined) {
+    quiet = settings.quiet
+  }
+
   return async (ctx, next) => {
 
     try {
@@ -70,14 +75,14 @@ export default function(settings?: ProblemMwSettings): Middleware {
         ctx.response.body.detail = detail;
       }
 
-      if (settings) {
-        if (clientError && settings.quiet === false) {
+      if (clientError) {
+        if (!quiet) {
           // tslint:disable-next-line no-console
           console.warn(e);
-        } else {
-          // tslint:disable-next-line no-console
-          console.error(e);
         }
+      } else {
+        // tslint:disable-next-line no-console
+        console.error(e);
       }
     }
 
