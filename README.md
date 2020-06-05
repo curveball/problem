@@ -1,8 +1,6 @@
 Curveball Problem Middleware
 ===========================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/curveball/problem.svg)](https://greenkeeper.io/)
-
 This package is a middleware for the [Curveball][2] framework that catches any
 exception and turns them into `application/problem+json` responses, as defined
 in [RFC7807][1].
@@ -68,6 +66,18 @@ The second way is by setting the environemnt variable `NODE_ENV` to the string
 `development`.
 
 If the `debug` property is set, that value always takes precedent.
+
+### Quiet mode
+
+If quiet mode is enabled, 4XX errors are not logged. Client errors are common
+and usually expected behavior, so it might be preferable for them to not spam
+the log.
+
+```typescript
+app.use(problemMw({
+  quiet: true
+});
+
 
 [1]: https://tools.ietf.org/html/rfc7807
 [2]: https://github.com/curveball/
