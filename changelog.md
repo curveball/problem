@@ -1,10 +1,12 @@
 Changelog
 =========
 
-0.2.2 (?)
+0.2.2 (2020-06-05)
 ---------
 
-* Typescript target is now es2019 instead of esnext to ensure that older Node.js versions are supported.
+* Added a `quiet` flag to supress 4XX client errors from the log.
+* Typescript target is now es2019 instead of esnext to ensure that older
+  Node.js versions are supported.
 
 
 0.2.1 (2020-01-05)
