@@ -17,7 +17,7 @@ export default function(settings?: ProblemMwSettings): Middleware {
 
   let quiet = false;
   if (settings && settings.quiet !== undefined) {
-    quiet = settings.quiet
+    quiet = settings.quiet;
   }
 
   return async (ctx, next) => {
@@ -77,7 +77,7 @@ export default function(settings?: ProblemMwSettings): Middleware {
 
       if (clientError) {
         if (!quiet) {
-          // tslint:disable-next-line no-console
+          /* eslint-disable no-console */
           console.warn(e);
         }
       } else {
