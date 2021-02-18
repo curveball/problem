@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.3.0 (2021-02-18)
+------------------
+
+* Modernize everything a bit
+* Upgrade all dependencies
+* Still no bugs
+
+
 0.2.2 (2020-06-05)
 ------------------
 
