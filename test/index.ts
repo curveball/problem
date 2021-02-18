@@ -6,14 +6,14 @@ import { NotFound, ServiceUnavailable, MethodNotAllowed, Unauthorized } from '@c
 
 class BlandError extends Error {
   httpStatus = 420
-};
+}
 
 const tester = (fun: Middleware, debug?: boolean, quiet?: boolean) => {
 
   const settings = {
     debug: debug !== undefined ? debug : undefined,
     quiet: quiet !== undefined ? quiet : undefined,
-  }
+  };
 
   const app = new Application();
   app.use( problemMw(settings) );
@@ -90,7 +90,7 @@ describe('Problem middleware', () => {
 
     const res = await tester( () => {
       throw new Unauthorized('Zzz', ['Bearer', 'Digest']);
-    })
+    });
 
     expect(res.status).to.equal(401);
     expect(res.body).to.eql({
@@ -148,7 +148,7 @@ describe('Problem middleware', () => {
     }, false, false);
 
     expect(consoleStub.calledOnce).to.be.true;
-  })
+  });
 
   it ('should log internal errors to the console if quiet mode is set', async() => {
     const consoleStub = stub(console, 'error');
@@ -158,7 +158,7 @@ describe('Problem middleware', () => {
     }, false, true);
 
     expect(consoleStub.calledOnce).to.be.true;
-  })
+  });
 
   it('should also correctly pick up "httpError" properties', async () => {
 
