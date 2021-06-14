@@ -77,9 +77,9 @@ the log.
 app.use(problemMw({
   quiet: true
 });
+```
 
 
 [1]: https://tools.ietf.org/html/rfc7807
 [2]: https://github.com/curveball/
 [3]: https://github.com/curveball/http-errors
-
