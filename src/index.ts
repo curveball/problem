@@ -24,7 +24,7 @@ export default function(settings?: ProblemMwSettings): Middleware {
 
     try {
       await next();
-    } catch (e) {
+    } catch (e: any) {
 
       let status: number;
       let clientError = false;
