@@ -5,7 +5,7 @@ import { stub } from 'sinon';
 import { NotFound, ServiceUnavailable, MethodNotAllowed, Unauthorized } from '@curveball/http-errors';
 
 class BlandError extends Error {
-  httpStatus = 420
+  httpStatus = 420;
 }
 
 const tester = (fun: Middleware, debug?: boolean, quiet?: boolean) => {

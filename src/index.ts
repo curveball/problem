@@ -1,22 +1,22 @@
 import { Middleware } from '@curveball/core';
-import { HttpProblem, isClientError, isHttpError } from '@curveball/http-errors';
+import { isClientError, isHttpError, isHttpProblem } from '@curveball/http-errors';
 
 type ProblemMwSettings = {
-  debug: boolean | undefined,
-  quiet: boolean | undefined,
+  debug: boolean | undefined;
+  quiet: boolean | undefined;
 };
 
 export default function(settings?: ProblemMwSettings): Middleware {
 
   let debugMode = false;
-  if (settings && settings.debug !== undefined) {
+  if (settings?.debug !== undefined) {
     debugMode = settings.debug;
   } else if (process.env.NODE_ENV === 'development') {
     debugMode = true;
   }
 
   let quiet = false;
-  if (settings && settings.quiet !== undefined) {
+  if (settings?.quiet !== undefined) {
     quiet = settings.quiet;
   }
 
@@ -34,11 +34,11 @@ export default function(settings?: ProblemMwSettings): Middleware {
       if (isHttpError(e)) {
         status = e.httpStatus;
         clientError = isClientError(e);
-        if ((<HttpProblem> e).title) {
-          title = (<HttpProblem> e).title;
+        if (isHttpProblem(e) && e.title) {
+          title = e.title;
         }
-        if ((<HttpProblem> e).detail) {
-          detail = (<HttpProblem> e).detail;
+        if (isHttpProblem(e) && e.detail) {
+          detail = e.detail;
         }
 
       } else {
@@ -81,7 +81,6 @@ export default function(settings?: ProblemMwSettings): Middleware {
           console.warn(e);
         }
       } else {
-        // tslint:disable-next-line no-console
         console.error(e);
       }
     }
