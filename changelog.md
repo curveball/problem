@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.3.1 (2022-01-17)
+------------------
+
+* The individual settings passed to the middleware factory can now be omitted.
+* Update dependencies.
+* Update linting rules.
+
 0.3.0 (2021-02-18)
 ------------------
 
