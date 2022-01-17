@@ -2,8 +2,8 @@ import { Middleware } from '@curveball/core';
 import { isClientError, isHttpError, isHttpProblem } from '@curveball/http-errors';
 
 type ProblemMwSettings = {
-  debug?: boolean,
-  quiet?: boolean,
+  debug?: boolean;
+  quiet?: boolean;
 };
 
 export default function(settings?: ProblemMwSettings): Middleware {
