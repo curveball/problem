@@ -1,6 +1,6 @@
 {
   "name": "@curveball/problem",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A middleware for converting errors into application/problem+json",
   "main": "dist/index.js",
   "scripts": {
