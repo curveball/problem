@@ -6,6 +6,7 @@
   "scripts": {
     "prepublishOnly": "make build",
     "test": "make lint test",
+    "lint": "make lint",
     "tsc": "tsc",
     "start": "make start"
   },
