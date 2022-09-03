@@ -1,11 +1,12 @@
 {
   "name": "@curveball/problem",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A middleware for converting errors into application/problem+json",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
     "test": "make lint test",
+    "lint": "make lint",
     "tsc": "tsc",
     "start": "make start"
   },
@@ -40,19 +41,19 @@
   },
   "homepage": "https://github.com/curveball/problem#readme",
   "devDependencies": {
-    "@curveball/core": "^0.16.1",
+    "@curveball/kernel": "^0.20.0",
     "@types/chai": "^4.2.15",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "^12.20.41",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^14.18.26",
     "@types/sinon": "^10.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
-    "@typescript-eslint/parser": "^5.9.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "chai": "^4.3.0",
-    "eslint": "^8.6.0",
-    "mocha": "^9.1.4",
+    "eslint": "^8.23.0",
+    "mocha": "^10.0.0",
     "nyc": "^15.1.0",
-    "sinon": "^12.0.1",
-    "ts-node": "^10.4.0",
+    "sinon": "^14.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.5.4"
   },
   "types": "dist/",
@@ -60,9 +61,6 @@
     "extension": [
       ".ts"
     ]
-  },
-  "peerDependencies": {
-    "@curveball/core": ">=0.16.1 <1"
   },
   "mocha": {
     "require": "ts-node/register",
@@ -72,5 +70,8 @@
       "js",
       "tsx"
     ]
+  },
+  "peerDependencies": {
+    "@curveball/kernel": ">=0.20.0 <1"
   }
 }
