@@ -20,7 +20,7 @@ Getting started
 
 ```typescript
 import problemMw from '@curveball/problem';
-import { Application } from '@curveball/core';
+import { Application } from '@curveball/kernel';
 
 const app = new Application();
 app.use(problemMw());

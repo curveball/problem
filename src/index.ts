@@ -1,4 +1,4 @@
-import { Middleware } from '@curveball/core';
+import { Middleware } from '@curveball/kernel';
 import { isClientError, isHttpError, isHttpProblem } from '@curveball/http-errors';
 
 type ProblemMwSettings = {

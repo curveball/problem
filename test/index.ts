@@ -1,4 +1,4 @@
-import { Application, Middleware } from '@curveball/core';
+import { Application, Middleware } from '@curveball/kernel';
 import problemMw from '../src/index';
 import { expect } from 'chai';
 import { stub } from 'sinon';
