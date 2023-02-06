@@ -1,5 +1,5 @@
 import { Application, Middleware } from '@curveball/kernel';
-import problemMw from '../src/index';
+import problemMw from '../src/index.js';
 import { expect } from 'chai';
 import { stub } from 'sinon';
 import { NotFound, ServiceUnavailable, MethodNotAllowed, Unauthorized } from '@curveball/http-errors';
