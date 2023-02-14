@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5.0 (????-??-??)
+0.5.0 (2023-02-13)
 ------------------
 
 * Now has a ESM and CommonJS build.
