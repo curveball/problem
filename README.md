@@ -3,7 +3,7 @@ Curveball Problem Middleware
 
 This package is a middleware for the [Curveball][2] framework that catches any
 exception and turns them into `application/problem+json` responses, as defined
-in [RFC7807][1].
+in [RFC9457][1].
 
 By default any exception turns into a non-descript 500 Internal Server Error.
 To create a more specific error, use an exception from the
@@ -80,6 +80,6 @@ app.use(problemMw({
 ```
 
 
-[1]: https://tools.ietf.org/html/rfc7807
+[1]: https://tools.ietf.org/html/rfc9457
 [2]: https://github.com/curveball/
 [3]: https://github.com/curveball/http-errors

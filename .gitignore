@@ -2,8 +2,7 @@
 /node_modules
 
 # typescript output
-/esm
-/cjs
+/dist
 
 # Directory used for running tests in CommonJS mode
 /cjs-test
@@ -16,3 +15,6 @@
 
 # bun!
 /bun.lockb
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
