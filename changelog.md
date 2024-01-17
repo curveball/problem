@@ -1,6 +1,17 @@
 Changelog
 =========
 
+1.0.0 (2024-01-17)
+------------------
+
+* Finally! Curveball v1. Only took 6 years.
+* CommonJS support has been dropped. The previous version of this library
+  supported both CommonJS and ESM. The effort of this no longer feels worth it.
+  ESM is the future, so we're dropping CommonJS.
+* Now requires Node 18.
+* Upgraded to Typescript 5.3.
+
+
 0.5.0 (2023-02-13)
 ------------------
 
@@ -19,6 +30,7 @@ Changelog
 * The individual settings passed to the middleware factory can now be omitted.
 * Update dependencies.
 * Update linting rules.
+
 
 0.3.0 (2021-02-18)
 ------------------
@@ -49,7 +61,7 @@ Changelog
 
 
 0.1.1 (2019-09-13)
------------------
+------------------
 
 * Updated to Curveball 0.9 API
 
