@@ -19,7 +19,8 @@
     "problem",
     "error",
     "exception",
-    "rfc7807"
+    "rfc7807",
+    "rfc9457"
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
